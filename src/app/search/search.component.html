@@ -1,0 +1,20 @@
+<div>
+  <h1>REGION SEARCH</h1>
+  <p>Summary Text blah blah look for some stuff here</p>
+  <form #searchForm="ngForm">
+
+  <div>
+    <label for="zipCode">Zip Code</label>
+    <input type="text" class="form-control" id="zipCode" name="zipCode" [(ngModel)]="searchInfo.zipCode" required>
+  </div>
+
+  <div>
+    <label for="businessType">Industry to insure</label>
+    <select class="form-control" id="businessType" name="businessType" [(ngModel)]="searchInfo.businessType">
+      <option *ngFor="let type of businessTypes" [value]="type">{{type}}</option>
+    </select>
+  </div>
+  <p>{{searchInfo | json}}</p>
+  <button type="submit" class="btn btn-success">Next</button>
+</form>
+</div>
