@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { SearchModule } from './search/search.module';
+import { BusinessSelectionModule } from './business-selection/business-selection.module';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { SearchModule } from './search/search.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SearchModule
+    SearchModule,
+    BusinessSelectionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
