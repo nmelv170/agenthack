@@ -1,1 +1,146 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+  background-color: #002663;
+  letter-spacing: 0.2;
+  color: #616265;
+}
+
+h1 {
+  position: relative;
+  font-size: 32px;
+  color: #002663;
+}
+
+h1::before,
+h1::after {
+  display: block;
+  content: "";
+  width: 160px;
+  height: 1;
+  border: 1.5px solid #ecac00;
+  position: absolute;
+  bottom: -5px;
+}
+
+h1::after {
+  width: 60vw;
+  left: -50vw;
+}
+
+.selection h1 {
+  color: white;
+}
+
+.selection h1::before {
+  width: 105px;
+}
+
+.details h1::after {
+  width: 100vw;
+  left: 0;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+label,
+.label {
+  font-size: 14px;
+}
+
+.container {
+  position: relative;
+}
+
+.btn-primary {
+  margin: 16px 0;
+  background-color: #5381ac;
+  border-color: #5381ac;
+}
+
+.btn-primary:hover,
+.btn-primary:not(:disabled):not(.disabled):active {
+  background-color: #466d92;
+  border-color: #466d92;
+}
+
+.back {
+  position: absolute;
+  top: -100px;
+  left: 0;
+}
+
+.brand {
+  display: block;
+  margin: 24px auto;
+}
+
+.search::before {
+  display: block;
+  content: "";
+  width: 120vh;
+  height: 120vh;
+  position: absolute;
+  left: 0;
+  background-color: white;
+  transform: rotate(45deg);
+}
+
+.search .brand {
+  margin-top: 64px;
+  margin-bottom: 36px;
+}
+
+.selection {
+  color: white;
+}
+
+.details::before {
+  display: block;
+  content: "";
+  width: 85vw;
+  height: 170vh;
+  position: absolute;
+  left: 15vw;
+  background-color: white;
+}
+
+.value {
+  font-size: 18px;
+  line-height: 1.1;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.probability {
+  font-size: 36px;
+  line-height: 1.1;
+  font-weight: bold;
+}
+
+.probability>span {
+  font-size: 0.75em;
+  vertical-align: 0.25em;
+}
+
+.results>.container {
+  margin: 12px 0;
+  padding-top: 7px;
+  padding-bottom: 8px;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #002663;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+.results>.container>.row:first-of-type::after {
+  display: block;
+  content: "";
+  width: 97%;
+  height: 1px;
+  border: 1.5px solid #ecac00;
+  margin-top: -5px;
+}

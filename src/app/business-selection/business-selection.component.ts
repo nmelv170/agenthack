@@ -42,8 +42,8 @@ export class BusinessSelectionComponent implements OnInit {
             let b = businessDataList[business]
             let obj = businessProbs.find(o => o["id"] === b[0]);
             this.businesses.push(new BusinessInfo(b[0], b[1], b[4], b[5], b[6], b[7], b[2], 
-                                                  b[8], b[9], b[10], b[11], b[12], b[13],
-                                                  b[14], b[15], b[16], b[18], b[19], b[20], obj.prob));
+                                                  b[9], b[10], b[11], b[12], b[13], b[14],
+                                                  b[15], b[16], b[17], b[18], b[20], b[21], ""+(parseFloat(obj.prob) * 100)));
           }
         });
 
