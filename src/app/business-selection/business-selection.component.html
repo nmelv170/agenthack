@@ -1,3 +1,32 @@
-<p>
-  business-selection works!
-</p>
+<div class="container">
+  <div class="container">
+    <button (click)="back();">Back</button><h1>Results</h1>
+    <p>Our appetite for the most likely insurance needs of the business you have searched for are listed below. The likelihood
+      of selling or renewing insurance with each business is also noted for your convenience.</p>
+    <p>Click a business for additional details.</p>
+  </div>
+  <div class="container">
+    <div class="container" *ngFor="let business of businesses">
+      <div class="row">
+        <div class="col-sm">
+          <h3>{{business.businessName}}</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">{{business.prob}}</div>
+        <div class="col-sm">
+          <div class="row">Property</div>
+          <div class="row">{{business.property}}</div>
+        </div>
+        <div class="col-sm">
+          <div class="row">Liability</div>
+          <div class="row">{{business.liability}}</div>
+        </div>
+        <div class="col-sm">
+          <div class="row">Auto</div>
+          <div class="row">{{business.auto}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
