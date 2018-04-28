@@ -11,6 +11,8 @@ export class BusinessSearchService {
   constructor(private http: HttpClient) { }
 
   businessSearch(zipCode: string, businessType: string) {
+    //FOR DEMO ONLY
+    zipCode = '46001';
     let request =
     { "GlobalParameters": 
       { "Database query": "select * from TestOutput where zip = " + zipCode + " and industry = '" + businessType + "'" }

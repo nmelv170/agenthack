@@ -1,0 +1,108 @@
+<div>
+  <h3>{{business.businessName}}</h3>
+  <h3>{{business.address}}</h3>
+  <h3>{{business.city}}, {{business.state}} {{business.zipCode}}</h3>
+</div>
+<div>
+  <h3>Business Information</h3>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Years In Business</th>
+        <th scope="col"># of Employee</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{business.yearsInBusiness}}</td>
+        <td>{{business.employeeNumber}}</td>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th scope="col">Own Building</th>
+        <th scope="col">Revenue</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{business.ownBuilding}}</td>
+        <td>{{business.revenue}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div>
+    <h3>Scores</h3>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Neighborhood</th>
+          <th scope="col">Business</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{business.businessScore}}</td>
+          <td>{{business.neighborhoodScore}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h3>Prospect Opportunities</h3>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Property</th>
+          <th scope="col">Commercial Auto</th>
+          <th scope="col">General Liability</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{business.property}}</td>
+          <td>{{business.auto}}</td>
+          <td>{{business.liability}}</td>
+        </tr>
+      </tbody>
+      <thead>
+        <tr>
+          <th scope="col">Workers Comp</th>
+          <th scope="col">Inland Marine</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{business.workersComp}}</td>
+          <td>{{business.inlandMarine}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h3>Insured by</h3>
+    <select>
+      <option value="property">Property</option>
+      <option value="auto">Auto</option>
+      <option value="liability">General Liability</option>
+      <option value="inlandMarine">Inland Marine</option>
+      <option value="workersComp">Workers Comp</option>
+    </select>
+  </div>
+  <div>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Provider</th>
+          <th scope="col">Policy Expiration</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{business.provider}}</td>
+          <td>{{business.expDate}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

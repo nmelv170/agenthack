@@ -17,6 +17,8 @@ export class BusinessInfo {
         public auto: string,
         public inlandMarine: string,
         public workersComp: string,
+        public provider: string,
+        public expDate: string,
         public prob: string
     ) { }
 }

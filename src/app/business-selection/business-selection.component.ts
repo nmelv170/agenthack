@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BusinessSearchService } from '../services/business-search/business-search.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BusinessInfo } from '../business-model/business-info';
+import { SelectedServiceService } from '../services/selected-business/selected-service.service';
 
 @Component({
   selector: 'app-business-selection',
@@ -14,7 +15,8 @@ export class BusinessSelectionComponent implements OnInit {
 
   constructor(private searchService: BusinessSearchService,
               private route: ActivatedRoute,
-              private router: Router) { }
+              private router: Router,
+              private selected: SelectedServiceService) { }
 
   //TODO events instead of nesting
   ngOnInit() {
@@ -34,13 +36,10 @@ export class BusinessSelectionComponent implements OnInit {
           let businessDataList = data.Results.output1.value.Values
           for(let business in businessDataList) {
             let b = businessDataList[business]
-            console.log(JSON.stringify(businessProbs));
-            console.log(b[0]);
             let obj = businessProbs.find(o => o["id"] === b[0]);
-            console.log(obj)
             this.businesses.push(new BusinessInfo(b[0], b[1], b[4], b[5], b[6], b[7], b[2], 
                                                   b[8], b[9], b[10], b[11], b[12], b[13],
-                                                  b[14], b[15], b[16], b[18], obj.prob));
+                                                  b[14], b[15], b[16], b[18], b[19], b[20], obj.prob));
           }
         });
 
@@ -50,5 +49,10 @@ export class BusinessSelectionComponent implements OnInit {
 
   back() {
     this.router.navigate(["search"]);
+  }
+
+  detailsNav(id: string) {
+    this.selected.setBusiness(this.businesses.find(o => o.businessId === id));
+    this.router.navigate(['business-details/' + id]);
   }
 }
