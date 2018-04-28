@@ -1,36 +1,44 @@
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <h1>REGION SEARCH</h1>
-      <p>Summary Text blah blah look for some stuff here</p>
+<div class="container search">
+  <div class="row justify-content-center">
+    <div class="col-5">
+      <div class="row">
+        <div class="col">
+          <img alt="Liberty Mutual Insurance" class="brand" src="/assets/lmi-blue.png">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h1>Prospector</h1>
+        </div>
+      </div>
+      <br>
+      <form #searchForm="ngForm">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="zipCode">ZIP Code</label>
+              <input type="text" class="form-control" id="zipCode" name="zipCode" [(ngModel)]="searchInfo.zipCode" required>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label for="businessType">Type of business</label>
+              <select class="form-control" id="businessType" name="businessType" [(ngModel)]="searchInfo.businessType">
+                <option *ngFor="let type of businessTypes" [value]="type">{{type}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <button class="btn btn-primary" (click)="searchAndNav()">Search</button>
+          </div>
+        </div>
+        
+      </form>
     </div>
   </div>
-
-  <form #searchForm="ngForm">
-    <div class="row">
-      <div class="col">
-        <div class="form-group">
-          <label for="zipCode">Zip Code</label>
-          <input type="text" class="form-control" id="zipCode" name="zipCode" [(ngModel)]="searchInfo.zipCode" required>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="form-group">
-          <label for="businessType">Industry to insure</label>
-          <select class="form-control" id="businessType" name="businessType" [(ngModel)]="searchInfo.businessType">
-            <option *ngFor="let type of businessTypes" [value]="type">{{type}}</option>
-          </select>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col">
-        <button (click)="searchAndNav()">Next</button>
-      </div>
-    </div>
-    
-  </form>
 </div>

@@ -1,7 +1,14 @@
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <button (click)="back()">Back</button>
+<div class="container details">
+  <div class="row justify-content-center">
+    <div class="col-7">
+      <div class="row">
+        <div class="col">
+          <img alt="Liberty Mutual Insurance" class="brand" src="/assets/lmi-blue.png">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+      <button class="btn btn-primary" (click)="back()">Back</button>
       <h1>{{business.businessName}}</h1>
       <h4>{{business.address}}</h4>
       <h4>{{business.city}}, {{business.state}} {{business.zipCode}}</h4>
@@ -113,5 +120,7 @@
         </table>
       </div>
     </div>
+  </div>
+  </div>
   </div>
 </div>
