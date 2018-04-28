@@ -12,6 +12,8 @@ import { SelectedServiceService } from '../services/selected-business/selected-s
 export class BusinessSelectionComponent implements OnInit {
 
   businesses = [];
+  zip: string;
+  type: string;
 
   constructor(private searchService: BusinessSearchService,
               private route: ActivatedRoute,
@@ -22,7 +24,9 @@ export class BusinessSelectionComponent implements OnInit {
   ngOnInit() {
     this.route.queryParamMap.subscribe(params => {
       this.businesses = [];
-      this.searchService.businessSearch(params.get('zipCode'), params.get('businessType')).subscribe((data) => {
+      this.zip = params.get('zipCode');
+      this.type = params.get('businessType');
+      this.searchService.businessSearch(this.zip, this.type).subscribe((data) => {
         let businessList = data.Results.output1.value.Values;
         let businessIds = [];
         let businessProbs = [];
@@ -53,6 +57,7 @@ export class BusinessSelectionComponent implements OnInit {
 
   detailsNav(id: string) {
     this.selected.setBusiness(this.businesses.find(o => o.businessId === id));
+    this.selected.setPrevData(this.zip, this.type);
     this.router.navigate(['business-details/' + id]);
   }
 }

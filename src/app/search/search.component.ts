@@ -20,6 +20,6 @@ export class SearchComponent implements OnInit {
 
   searchAndNav() {
     this.router.navigate(['business-selection'], { queryParams: {'zipCode': this.searchInfo.zipCode, 
-                                                                 'businesTyupe':   this.searchInfo.businessType}})
+                                                                 'businessType':   this.searchInfo.businessType}})
   }
 }
