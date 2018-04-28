@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class SearchComponent implements OnInit {
 
-  businessTypes = ['Hotel', 'Resturaunt', 'Retail'];
+  businessTypes = ['Bank', 'Clothing/Shoe/Accessory Stores', "Hotel/ Resorts", 'Restaurants'];
 
   searchInfo = new SearchInfo("", this.businessTypes[0]);
 

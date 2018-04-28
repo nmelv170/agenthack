@@ -27,17 +27,17 @@ export class BusinessSelectionComponent implements OnInit {
       this.zip = params.get('zipCode');
       this.type = params.get('businessType');
       this.searchService.businessSearch(this.zip, this.type).subscribe((data) => {
-        let businessList = data.Results.output1.value.Values;
+        let businessList = data["Results"]["output1"]["value"]["Values"];
         let businessIds = [];
         let businessProbs = [];
         for (let business in businessList) {
-          businessIds.push(businessList[business]);
+          businessIds.push(businessList[business][0]);
           //TODO: i know, cheeting for now
           businessProbs.push({"id": businessList[business][0], "prob": businessList[business][3]});
         }
-
+        console.log(businessIds);
         this.searchService.businessLookup(businessIds).subscribe(data => {
-          let businessDataList = data.Results.output1.value.Values
+          let businessDataList = data["Results"]["output1"]["value"]["Values"]
           for(let business in businessDataList) {
             let b = businessDataList[business]
             let obj = businessProbs.find(o => o["id"] === b[0]);

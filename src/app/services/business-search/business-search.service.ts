@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Rx';
 @Injectable()
 export class BusinessSearchService {
 
-  URI: string = 'https://ussouthcentral.services.azureml.net/workspaces/5bbbe24aa1204901a2e63521041416fd/services/f72baa63847841e5b8a213bb0532cb9a/execute?api-version=2.0&details=true';
+  URI: string = 'http://10.172.102.236:8080/data';
 
   constructor(private http: HttpClient) { }
 
@@ -15,12 +15,12 @@ export class BusinessSearchService {
     zipCode = '46001';
     let request =
     { "GlobalParameters": 
-      { "Database query": "select * from TestOutput where zip = " + zipCode + " and industry = '" + businessType + "'" }
+      { "Database query": "select * from TestOutput where industry = '" + businessType + "'" }
     }
 
-      return Observable.of(this.mockSearchResults)
+      //return Observable.of(this.mockSearchResults)
 
-    //return this.http.post(this.URI, request, { headers: this.getHeaders() })
+    return this.http.post(this.URI, request, { headers: this.getHeaders() })
   }
 
   businessLookup(businessIds: Array<string>) {
@@ -37,10 +37,10 @@ export class BusinessSearchService {
           { "Database query": "select * from dbo.Business  where id in (" + listIds +")" }
       }
 
-      return Observable.of(this.mockBusLookup);
+      //return Observable.of(this.mockBusLookup);
 
 
-     //return this.http.post(this.URI, request, { headers: this.getHeaders() })
+     return this.http.post(this.URI, request, { headers: this.getHeaders() })
   }
 
   private getHeaders(): HttpHeaders {
